@@ -1,0 +1,19 @@
+/**
+ *	시도 시군구 읍면동
+ */
++ [*] (@sido) [*] (@sigungu) (@district) [@weather] [@show] [*]
+- 오늘 <star1> <star2> <star3> 날씨는..|sido=<star1>/sigungu=<star2>/district=<star3>
+
+/**
+ *	시군구 읍면동
+ */
++ [*] (@sigungu) (@district) [@weather] [@show] [*]
+- 오늘 <star1> <star2> 날씨는..
+
+
+/**
+ *	읍면동
+ */
++ [*] (@district) [@weather] [@show] [*]
+- 읍면동이 <star1>이라는 것은 잘 알겠는데, "시도"나 "시군구"도 알려줘
+^ 아무래도 "[서울]시 [강동구] [암사동] 날씨"라고 이야기해주면 더 고맙고{weight=3}|command=일상
