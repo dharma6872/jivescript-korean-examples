@@ -9,10 +9,6 @@
 	<artifactId>jivescript-korean-examples-konal</artifactId>
 	<packaging>jar</packaging>
 
-	<properties>
-	    <start-class>com.socurites.jive.example.konal.web.KonalWebApplication</start-class>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>com.socurites</groupId>
