@@ -33,6 +33,8 @@ public class KonalWebController {
 	@RequestMapping("/")
     @ResponseBody
     String listen(@RequestParam("message")String message) {
+		System.out.println("message=" + message);
+		
 		JiveScriptReplyBuilder reply = bot.reply("송준이", message);
 		
 		String weatherResult = ""; 
