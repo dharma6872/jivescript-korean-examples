@@ -52,7 +52,6 @@ public class KonalWebController {
 				KonalDistrict standardDistrcit = disctrictRepository.getStandardDistrcit(sido, sigungu, town);
 				System.out.println("standardDistrcit=" + standardDistrcit);
 
-				/**
 				ResponseEntity<String>  responseEntity = restTemplate.exchange("http://apis.skplanetx.com/weather/current/hourly?lon=&village=" + standardDistrcit.getTown() + "&county=" + standardDistrcit.getSigungu() + "&lat=&city=" + standardDistrcit.getSido() + "&version=1", HttpMethod.GET, httpEntity, String.class);
 				String responseBody = responseEntity.getBody();
 				
@@ -92,7 +91,6 @@ public class KonalWebController {
 				
 				weatherResult += "\n";
 				weatherResult += sky + ", 현재 온도는 " + tempCurr + "(최저: " + tempMin + ", 최고: " + tempMax + "), 습도는 " + humidity + "%입니다.";
-				**/
 			} catch ( Exception e) {
 				e.printStackTrace();
 				return reply.getReplyAsText();
