@@ -2,12 +2,16 @@ package com.socurites.jive.example.konal.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.socurites.jive.core.bot.JiveScriptBot;
 import com.socurites.jive.core.bot.builder.JiveScriptReplyBuilder;
 import com.socurites.jive.example.konal.web.domain.KonalDistrict;
