@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.socurites.jive.core.bot.JiveScriptBot;
@@ -64,41 +65,48 @@ public class KonalWebController {
 				String responseBody = responseEntity.getBody();
 				
 				JsonObject jsonObj = new JsonParser().parse(responseBody).getAsJsonObject();
-				JsonObject hourlyWeatherObject = jsonObj.get("weather").getAsJsonObject()
-						.get("hourly").getAsJsonArray().get(0).getAsJsonObject()
+				JsonArray hourlyWeatherArray = jsonObj.get("weather").getAsJsonObject()
+						.get("hourly").getAsJsonArray()
 				;
 				
-				String sky = hourlyWeatherObject
-						.get("sky").getAsJsonObject()
-						.get("name")
-						.getAsString()
-						.replaceAll("\"", "");
-			
-				String tempCurr = hourlyWeatherObject
-						.get("temperature").getAsJsonObject()
-						.get("tc")
-						.getAsString()
-						.replaceAll("\"", "");
+				if ( hourlyWeatherArray != null ) {
+					JsonObject hourlyWeatherObject =  hourlyWeatherArray.get(0).getAsJsonObject();
+					
+					String sky = hourlyWeatherObject
+							.get("sky").getAsJsonObject()
+							.get("name")
+							.getAsString()
+							.replaceAll("\"", "");
 				
-				String tempMax = hourlyWeatherObject
-						.get("temperature").getAsJsonObject()
-						.get("tmax")
-						.getAsString()
-						.replaceAll("\"", "");
-				
-				String tempMin = hourlyWeatherObject
-						.get("temperature").getAsJsonObject()
-						.get("tmin")
-						.getAsString()
-						.replaceAll("\"", "");
-				
-				String humidity = hourlyWeatherObject
-						.get("humidity")
-						.getAsString()
-						.replaceAll("\"", "");
-				
-				weatherResult += "\n";
-				weatherResult += sky + ", 현재 온도는 " + tempCurr + "(최저: " + tempMin + ", 최고: " + tempMax + "), 습도는 " + humidity + "%입니다.";
+					String tempCurr = hourlyWeatherObject
+							.get("temperature").getAsJsonObject()
+							.get("tc")
+							.getAsString()
+							.replaceAll("\"", "");
+					
+					String tempMax = hourlyWeatherObject
+							.get("temperature").getAsJsonObject()
+							.get("tmax")
+							.getAsString()
+							.replaceAll("\"", "");
+					
+					String tempMin = hourlyWeatherObject
+							.get("temperature").getAsJsonObject()
+							.get("tmin")
+							.getAsString()
+							.replaceAll("\"", "");
+					
+					String humidity = hourlyWeatherObject
+							.get("humidity")
+							.getAsString()
+							.replaceAll("\"", "");
+					
+					weatherResult += "\n";
+					weatherResult += sky + ", 현재 온도는 " + tempCurr + "(최저: " + tempMin + ", 최고: " + tempMax + "), 습도는 " + humidity + "%입니다.";
+				} else {
+					weatherResult += "\n";
+					weatherResult += "내가 알고 있는 지역이 아닌 듯.."; 
+				}
 			} catch ( Exception e) {
 				e.printStackTrace();
 				return reply.getReplyAsText();
