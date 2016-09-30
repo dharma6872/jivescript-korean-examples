@@ -8,10 +8,6 @@
 	</parent>
 	<artifactId>jivescript-korean-examples-konal</artifactId>
 	<packaging>jar</packaging>
-	
-	<properties>
-		<tomcat.version>7.0.52</tomcat.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -47,11 +43,6 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.hadoop</groupId>
-			<artifactId>hadoop-core</artifactId>
-			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
