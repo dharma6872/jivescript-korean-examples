@@ -48,6 +48,10 @@ public class KonalWebController {
 			JiveExtDomainEntity extDomain = ((JiveScriptExtReplyBuilder)reply).getDomainEntity();
 			System.out.println(extDomain);
 			
+			if ( extDomain.isEmpty() ) {
+				return reply.getReplyAsText();
+			}
+			
 			try {
 				String sido = (extDomain.hasProp("sido") ) ? extDomain.getProp("sido") : "";
 				String sigungu = (extDomain.hasProp("sigungu") ) ? extDomain.getProp("sigungu") : "";

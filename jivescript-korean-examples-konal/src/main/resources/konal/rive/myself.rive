@@ -1,16 +1,14 @@
 // Tell the user stuff about ourself.
 
 + <bot name>
-- 날씨를 알려줄게 지역을 알려줄래?\n
-^ 아무래도 "[서울]시 [강동구] [암사동] 날씨"라고 이야기해주면 더 고맙고{weight=3}|command=일상
+- 유 세이 지역! 아세이 날씨!\n
+^ 아무래도 "[서울시] [강동구] [암사동] 날씨"라고 이야기해주면 더 고맙고{weight=3}
 
 + <bot name> *
 - {@<star>}
 
-+ 좋아하다 밴드 [*]
-- 나는 요츰 <bot band>가 가장 좋더라구|command=일상
 
 
 + @curse
-- 반사|command=일상{weight=3}
-- 계속반사|command=일상
+- 반사{weight=3}
+- 계속반사
