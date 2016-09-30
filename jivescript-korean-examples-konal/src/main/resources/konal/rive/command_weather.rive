@@ -1,19 +1,39 @@
 /**
  *	시도 시군구 읍면동
  */
-+ [*] (@sido) [*] (@sigungu) (@district) [@weather] [@show] [*]
-- 오늘 <star1> <star2> <star3> 날씨는..|sido=<star1>/sigungu=<star2>/district=<star3>
++ [*] (@sido) [*] (@sigungu) (@town) [@weather] [@show] [*]
+- 오늘 <star1> <star2> <star3> 날씨입니다|sido=<star1>/sigungu=<star2>/town=<star3>
+
+/**
+ *	시도 시군구
+ */
++ [*] (@sido) [*] (@sigungu) [@weather] [@show] [*]
+- 오늘 <star1> <star2> 날씨입니다|sido=<star1>/sigungu=<star2>/town=
+
+
+/**
+ *	시도
+ */
++ [*] (@sido) [*] [@weather] [@show] [*]
+- 오늘 <star1> 날씨입니다|sido=<star1>/sigungu=/town=
+
+
+/**
+ *	시군구
+ */
++ [*] (@sigungu) (@town) [@weather] [@show] [*]
+- 오늘 <star1> 날씨입니다|sido=/sigungu=<star1>/town=
 
 /**
  *	시군구 읍면동
  */
-+ [*] (@sigungu) (@district) [@weather] [@show] [*]
-- 오늘 <star1> <star2> 날씨는..
++ [*] (@sigungu) (@town) [@weather] [@show] [*]
+- 오늘 <star1> <star2> 날씨입니다|sido=/sigungu=<star1>/town=<star2>
 
 
 /**
  *	읍면동
  */
-+ [*] (@district) [@weather] [@show] [*]
++ [*] (@town) [@weather] [@show] [*]
 - 읍면동이 <star1>이라는 것은 잘 알겠는데, "시도"나 "시군구"도 알려줘
-^ 아무래도 "[서울]시 [강동구] [암사동] 날씨"라고 이야기해주면 더 고맙고{weight=3}|command=일상
+^ 지역을 자세히 알려줘, 예를 들면 "[서울시] [강동구] [암사동]" ~{weight=3}|sido=/sigungu=/town=
